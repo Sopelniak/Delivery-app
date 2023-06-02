@@ -3,15 +3,24 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 import { ShopPage } from 'pages/ShopPage/ShopPage';
 import { ShoppingCartPage } from 'pages/ShoppingCartPage/ShoppingCartPage';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
+import { ProductsList } from './ProductsList/ProductsList';
 
 export const App = () => {
   return (
     <>
-      <div>ggg</div>
-
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="shop" element={<ShopPage />} />
+          <Route path="shop" element={<ShopPage />}>
+            <Route path="mc-duck" element={<ProductsList shop="mc-duck" />} />
+            <Route path="cfk" element={<ProductsList shop="cfk" />} />
+            <Route
+              path="minodos-pizza"
+              element={<ProductsList shop="minodos-pizza" />}
+            />
+            <Route path="bta" element={<ProductsList shop="bta" />} />
+            <Route path="shenro" element={<ProductsList shop="shenro" />} />
+          </Route>
+
           <Route path="cart" element={<ShoppingCartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
