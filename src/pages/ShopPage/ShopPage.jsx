@@ -23,6 +23,7 @@ export function ShopPage() {
           </li>
         </ul>
       </div>
+
       <Outlet />
     </div>
   );
