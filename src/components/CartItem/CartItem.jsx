@@ -1,10 +1,8 @@
-import { useState } from 'react';
-
-export function CartItem({ item: { name, price, id }, updateQuantity }) {
-  const [quantity, setQuantity] = useState('1');
-
+export function CartItem({
+  item: { name, price, id, quantity },
+  updateQuantity,
+}) {
   const inputHandler = e => {
-    setQuantity(e.target.value.toString());
     updateQuantity(id, e.target.value.toString());
   };
 
