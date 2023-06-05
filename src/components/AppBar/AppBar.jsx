@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavLinkStyled } from './AppBar.styled';
 
 export function AppBar() {
   return (
     <nav>
-      <NavLink to="/shop">Shop</NavLink>
-      <NavLink to="/cart">Shopping Cart</NavLink>
+      <NavLinkStyled to="/shop">Shop</NavLinkStyled>
+      <NavLinkStyled to="/cart">Shopping Cart</NavLinkStyled>
     </nav>
   );
 }

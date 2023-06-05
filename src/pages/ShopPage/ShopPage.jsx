@@ -1,30 +1,31 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Box, Link, ListItem, ShopsBox, ShopsTitle } from './ShopPage.styled';
 
 export function ShopPage() {
   return (
-    <div>
-      <div>
-        <h2>Shops:</h2>
+    <Box>
+      <ShopsBox>
+        <ShopsTitle>Shops:</ShopsTitle>
         <ul>
-          <li>
+          <ListItem>
             <Link to="mc-duck">Mc Duck</Link>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <Link to="cfk">CFK</Link>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <Link to="minodos-pizza">Minodo's Pizza</Link>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <Link to="bta">BTA</Link>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <Link to="shenro">Shenro</Link>
-          </li>
+          </ListItem>
         </ul>
-      </div>
+      </ShopsBox>
 
       <Outlet />
-    </div>
+    </Box>
   );
 }

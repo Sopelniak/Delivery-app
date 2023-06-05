@@ -5,6 +5,7 @@ import minodosPizza from '../../data/minodos-pizza.json';
 import bta from '../../data/bta.json';
 import shenro from '../../data/shenro.json';
 import { ProductCard } from './ProductCard/ProductCard';
+import { List, ProductsBox } from './ProductsList.styled';
 
 export function ProductsList({ shop }) {
   const [products, setProducts] = useState([]);
@@ -33,13 +34,12 @@ export function ProductsList({ shop }) {
   }, [shop]);
 
   return (
-    <div>
-      <h2>{shop}</h2>
-      <ul>
+    <ProductsBox>
+      <List>
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </ul>
-    </div>
+      </List>
+    </ProductsBox>
   );
 }
