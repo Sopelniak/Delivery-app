@@ -4,7 +4,7 @@ export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 200px;
+  width: 300px;
   height: 100px;
   padding: 20px;
   background-color: #fffcf9;
@@ -23,16 +23,14 @@ export const Price = styled.p`
   text-align: center;
 `;
 
-export const Button = styled.button`
-  width: 100%;
-  border: 2px solid #f07f2e;
+export const LabelStyled = styled.label`
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: auto;
+`;
+
+export const InputStyled = styled.input`
+  height: 25px;
   border-radius: 5px;
-  background-color: ${props => props.backColor};
-  color: #ffffff;
-  cursor: pointer;
-  transition: box-shadow 100ms ease-in-out;
-  &:hover {
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  }
 `;

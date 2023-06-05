@@ -4,7 +4,17 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProducts } from 'redux/selectors';
-import { actionUpdateQuantity } from 'redux/store';
+import { actionClearCart, actionUpdateQuantity } from 'redux/store';
+import {
+  InputStyled,
+  InputBox,
+  LabelStyled,
+  Box,
+  ListStyled,
+  BtnBox,
+  Total,
+  Button,
+} from './ShoppingCartPage.styled';
 
 export function ShoppingCartPage() {
   const [total, setTotal] = useState(0);
@@ -24,10 +34,11 @@ export function ShoppingCartPage() {
     productsInCart.forEach(({ price, quantity }) => {
       sum += Number(price) * Number(quantity);
     });
-    return sum;
+    return sum.toFixed(2);
   }
 
   const submitHandler = e => {
+    e.preventDefault();
     const { name, email, phone, address } = e.target;
     const products = productsInCart.map(item => {
       const { id, name, quantity } = item;
@@ -43,43 +54,50 @@ export function ShoppingCartPage() {
       total,
     };
     console.log(newOrder);
-    e.preventDefault();
+    e.target.reset();
+    dispatch(actionClearCart());
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={submitHandler}>
-        <label>
-          Name
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Phone
-          <input type="tel" name="phone" />
-        </label>
-        <label>
-          Address
-          <input type="text" name="address" />
-        </label>
+        <Box>
+          <InputBox>
+            <LabelStyled>
+              Name
+              <InputStyled type="text" name="name" />
+            </LabelStyled>
+            <LabelStyled>
+              Email
+              <InputStyled type="email" name="email" />
+            </LabelStyled>
+            <LabelStyled>
+              Phone
+              <InputStyled type="tel" name="phone" />
+            </LabelStyled>
+            <LabelStyled>
+              Address
+              <InputStyled type="text" name="address" />
+            </LabelStyled>
+          </InputBox>
 
-        <ul>
-          {productsInCart.map(item => (
-            <CartItem
-              key={item.id}
-              item={item}
-              updateQuantity={updateQuantity}
-            />
-          ))}
-        </ul>
+          <ListStyled>
+            {productsInCart.map(item => (
+              <CartItem
+                key={item.id}
+                item={item}
+                updateQuantity={updateQuantity}
+              />
+            ))}
+          </ListStyled>
+        </Box>
 
-        <p>total: {total}</p>
+        <BtnBox>
+          <Total>total: {total}$</Total>
 
-        <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
+        </BtnBox>
       </form>
-    </div>
+    </>
   );
 }

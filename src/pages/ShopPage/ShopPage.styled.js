@@ -10,8 +10,8 @@ export const Box = styled.div`
 export const ShopsBox = styled.div`
   padding: 20px;
   background-color: #efefef;
-  border: 3px solid #1e2e5e;
   border-radius: 10px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
 `;
 
 export const ShopsTitle = styled.h2`
@@ -21,8 +21,16 @@ export const ShopsTitle = styled.h2`
 `;
 
 export const ListItem = styled.li`
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: background-color 500ms linear, transform 100ms ease-in-out;
   &:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
@@ -34,8 +42,6 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   color: #1e2e5e;
   background-color: #ffffff;
-  border: 3px solid #1e2e5e;
-  border-radius: 10px;
 
   &.active {
     color: #ffffff;

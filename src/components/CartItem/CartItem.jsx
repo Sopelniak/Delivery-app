@@ -1,3 +1,11 @@
+import {
+  InputStyled,
+  LabelStyled,
+  ListItem,
+  Name,
+  Price,
+} from './CartItem.styled';
+
 export function CartItem({
   item: { name, price, id, quantity },
   updateQuantity,
@@ -7,12 +15,12 @@ export function CartItem({
   };
 
   return (
-    <li>
-      <p>{name}</p>
-      <p>Price: {price}</p>
-      <label>
+    <ListItem>
+      <Name>{name}</Name>
+      <Price>Price: {price}</Price>
+      <LabelStyled>
         Quantity
-        <input
+        <InputStyled
           onChange={inputHandler}
           type="number"
           value={quantity}
@@ -21,7 +29,7 @@ export function CartItem({
           step="1"
           name={id}
         />
-      </label>
-    </li>
+      </LabelStyled>
+    </ListItem>
   );
 }
