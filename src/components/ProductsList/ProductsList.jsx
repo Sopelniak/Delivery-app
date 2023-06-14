@@ -28,7 +28,6 @@ export function ProductsList({ shop }) {
         setProducts(shenro);
         break;
       default:
-        console.log('wrong path');
         setProducts([]);
     }
   }, [shop]);
