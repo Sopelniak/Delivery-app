@@ -27,7 +27,9 @@ export const Button = styled.button`
   width: 100%;
   border: 2px solid #f07f2e;
   border-radius: 5px;
-  background-color: ${props => props.backColor};
+  background-color: ${props => {
+    return props.btnValue === 'add to Cart' ? '#f07f2e' : '#AEAEAE';
+  }};
   color: #ffffff;
   cursor: pointer;
   transition: box-shadow 100ms ease-in-out;
