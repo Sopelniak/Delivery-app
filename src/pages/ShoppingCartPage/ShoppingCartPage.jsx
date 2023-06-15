@@ -15,6 +15,7 @@ import {
   Total,
   Button,
 } from './ShoppingCartPage.styled';
+import { Notice } from 'components/Notice/Notice';
 
 export function ShoppingCartPage() {
   const [total, setTotal] = useState(0);
@@ -81,21 +82,30 @@ export function ShoppingCartPage() {
             </LabelStyled>
           </InputBox>
 
-          <ListStyled>
-            {productsInCart.map(item => (
-              <CartItem
-                key={item.id}
-                item={item}
-                updateQuantity={updateQuantity}
-              />
-            ))}
-          </ListStyled>
+          {productsInCart.length === 0 ? (
+            <Notice message="Your shopping cart is empty!" />
+          ) : (
+            <ListStyled>
+              {productsInCart.map(item => (
+                <CartItem
+                  key={item.id}
+                  item={item}
+                  updateQuantity={updateQuantity}
+                />
+              ))}
+            </ListStyled>
+          )}
         </Box>
 
         <BtnBox>
           <Total>total: {total}$</Total>
 
-          <Button type="submit">Submit</Button>
+          <Button
+            type="submit"
+            disabled={productsInCart.length > 0 ? false : true}
+          >
+            Submit
+          </Button>
         </BtnBox>
       </form>
     </>

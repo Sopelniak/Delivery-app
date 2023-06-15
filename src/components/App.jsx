@@ -4,7 +4,7 @@ import { ShopPage } from 'pages/ShopPage/ShopPage';
 import { ShoppingCartPage } from 'pages/ShoppingCartPage/ShoppingCartPage';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 import { ProductsList } from './ProductsList/ProductsList';
-import { ShopNotice } from './ShopMessage/ShopNotice';
+import { Notice } from './Notice/Notice';
 
 export const App = () => {
   return (
@@ -12,7 +12,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="shop" element={<ShopPage />}>
-            <Route index element={<ShopNotice />} />
+            <Route index element={<Notice message="Please select a shop!" />} />
             <Route path="mc-duck" element={<ProductsList shop="mc-duck" />} />
             <Route path="cfk" element={<ProductsList shop="cfk" />} />
             <Route

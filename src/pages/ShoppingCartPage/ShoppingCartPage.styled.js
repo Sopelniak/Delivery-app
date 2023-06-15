@@ -65,4 +65,10 @@ export const Button = styled.button`
   &:hover {
     transform: scale(1.1);
   }
+  &:disabled {
+    transform: scale(1);
+    background-color: #fffcf9;
+    border: 1px solid grey;
+    cursor: auto;
+  }
 `;
