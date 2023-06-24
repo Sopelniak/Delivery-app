@@ -104,7 +104,7 @@ export function ShoppingCartPage() {
             type="submit"
             disabled={productsInCart.length > 0 ? false : true}
           >
-            Submit
+            Submity
           </Button>
         </BtnBox>
       </form>
