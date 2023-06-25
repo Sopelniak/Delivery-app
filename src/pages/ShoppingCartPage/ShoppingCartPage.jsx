@@ -65,16 +65,16 @@ export function ShoppingCartPage() {
         <Box>
           <InputBox>
             <LabelStyled>
-              Name*
-              <InputStyled type="text" name="name" required />
+              Name
+              <InputStyled type="text" name="name" />
             </LabelStyled>
             <LabelStyled>
-              Email*
-              <InputStyled type="email" name="email" required />
+              Email
+              <InputStyled type="email" name="email" />
             </LabelStyled>
             <LabelStyled>
-              Phone*
-              <InputStyled type="tel" name="phone" required />
+              Phone
+              <InputStyled type="tel" name="phone" />
             </LabelStyled>
             <LabelStyled>
               Address
