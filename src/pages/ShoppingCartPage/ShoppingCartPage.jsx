@@ -98,7 +98,7 @@ export function ShoppingCartPage() {
         </Box>
 
         <BtnBox>
-          <Total>total: {total}$</Total>
+          <Total>totalll: {total}$</Total>
 
           <Button
             type="submit"
