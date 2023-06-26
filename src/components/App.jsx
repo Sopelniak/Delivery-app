@@ -11,7 +11,7 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="shop" element={<ShopPage />}>
+          <Route path="/" element={<ShopPage />}>
             <Route index element={<Notice message="Please select a shop!" />} />
             <Route path="mc-duck" element={<ProductsList shop="mc-duck" />} />
             <Route path="cfk" element={<ProductsList shop="cfk" />} />
@@ -22,7 +22,6 @@ export const App = () => {
             <Route path="bta" element={<ProductsList shop="bta" />} />
             <Route path="shenro" element={<ProductsList shop="shenro" />} />
           </Route>
-
           <Route path="cart" element={<ShoppingCartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

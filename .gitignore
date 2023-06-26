@@ -1,4 +1,4 @@
-np# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 #Junk
 .vscode/
@@ -25,5 +25,3 @@ np# See https://help.github.com/articles/ignoring-files/ for more about ignoring
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-node_modules
-node_modules

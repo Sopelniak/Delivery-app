@@ -65,16 +65,16 @@ export function ShoppingCartPage() {
         <Box>
           <InputBox>
             <LabelStyled>
-              Name
-              <InputStyled type="text" name="name" />
+              Name*
+              <InputStyled type="text" name="name" required />
             </LabelStyled>
             <LabelStyled>
-              Email
-              <InputStyled type="email" name="email" />
+              Email*
+              <InputStyled type="email" name="email" required />
             </LabelStyled>
             <LabelStyled>
-              Phone
-              <InputStyled type="tel" name="phone" />
+              Phone*
+              <InputStyled type="tel" name="phone" required />
             </LabelStyled>
             <LabelStyled>
               Address
@@ -98,13 +98,13 @@ export function ShoppingCartPage() {
         </Box>
 
         <BtnBox>
-          <Total>total: {total}$</Total>
+          <Total>totalll: {total}$</Total>
 
           <Button
             type="submit"
             disabled={productsInCart.length > 0 ? false : true}
           >
-            Submity
+            Submit
           </Button>
         </BtnBox>
       </form>
